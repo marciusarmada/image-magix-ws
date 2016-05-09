@@ -14,23 +14,23 @@ import java.nio.file.Files;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.im4java.core.Info;
 import org.im4java.core.InfoException;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.jayway.restassured.response.Response;
 
 public class ImageResourceTest {
 
-	private HttpServer server;
+	private static HttpServer server;
 
-	@Before
-	public void before() {
+	@BeforeClass
+	public static void before() {
 		server = Servidor.startServer();
 	}
 
-	@After
-	public void after() {
+	@AfterClass
+	public static void after() {
 		Servidor.stopServer(server);
 	}
 
